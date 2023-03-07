@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FaceSnap } from './face-snap/models/face-snap.model';
+import { FaceSnap } from './models/face-snap.model';
 
 @Component({
   selector: 'app-root',
@@ -15,28 +15,30 @@ export class AppComponent implements OnInit {
   myLastSnap !: FaceSnap;
 
   ngOnInit(){
-    this.mySnap = new FaceSnap(
-      'Archibald',
-      'Mon meilleur ami depuis tout petit',
-      new Date(),
-      0,
-      'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-    );
+    this.mySnap = {
+      title: 'Archibald',
+      description: 'Mon meilleur ami depuis tout petit',
+      createdDate: new Date(),
+      snaps: 0,
+      imageUrl: 'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
+      location: 'Paris',
+    };
 
-    this.myOtherSnap = new FaceSnap(
-      'Three Rock Mountain',
-      'Un endroit magnifique pour les randonnées.',
-      new Date(),
-      0,
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Three_Rock_Mountain_Southern_Tor.jpg/280px-Three_Rock_Mountain_Southern_Tor.jpg',
-    );
+    this.myOtherSnap = {
+      title:'Three Rock Mountain',
+      description:'Un endroit magnifique pour les randonnées.',
+      createdDate:new Date(),
+      snaps:0,
+      imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Three_Rock_Mountain_Southern_Tor.jpg/280px-Three_Rock_Mountain_Southern_Tor.jpg',
+      location: 'La Montagne'
+    };
 
-    this.myLastSnap = new FaceSnap(
-      'Un bon repas',
-      "Mmmh que c'est bon !",
-      new Date(),
-      0,
-      'https://upload.wikimedia.org/wikipedia/commons/2/2b/Le_go%C3%BBter_sur_l%27herbe.jpg',
-    );
+    this.myLastSnap = {
+      title:'Un bon repas',
+      description:"Mmmh que c'est bon !",
+      createdDate:new Date(),
+      snaps:0,
+      imageUrl:'https://upload.wikimedia.org/wikipedia/commons/2/2b/Le_go%C3%BBter_sur_l%27herbe.jpg',
+    };
   }
 }
