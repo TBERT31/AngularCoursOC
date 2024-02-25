@@ -8,12 +8,6 @@ import { FaceSnap } from '../models/face-snap.model';
 })
 export class FaceSnapComponent implements OnInit{
     @Input() faceSnap!: FaceSnap;
-
-    // title!: string;
-    // description!: string;
-    // createdDate!: Date;
-    // snaps!: number;
-    // imageUrl!: string;
     buttonText!:string;
 
     constructor(
@@ -21,11 +15,6 @@ export class FaceSnapComponent implements OnInit{
     ){}
 
     ngOnInit(): void {
-      // this.title = this.faceSnap.title;
-      // this.description = this.faceSnap.description;
-      // this.createdDate = this.faceSnap.createdDate;
-      // this.snaps = this.faceSnap.snaps;
-      // this.imageUrl = this.faceSnap.imageUrl;
       this.buttonText = "Oh Snap!";
     }
 
