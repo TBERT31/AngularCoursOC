@@ -22,7 +22,7 @@ export class FaceSnapsService {
       imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Three_Rock_Mountain_Southern_Tor.jpg/2880px-Three_Rock_Mountain_Southern_Tor.jpg',
       createdDate: new Date(),
       snaps: 62,
-      location: "à la montagne",
+      location: "à la montagne", 
     },
     {
       id:3,
