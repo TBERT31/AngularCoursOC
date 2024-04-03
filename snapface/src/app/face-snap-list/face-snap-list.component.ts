@@ -11,7 +11,6 @@ import { tap, take, takeUntil } from 'rxjs/operators';
 })
 export class FaceSnapListComponent implements OnInit, OnDestroy {
   faceSnaps!: FaceSnap[];
-
   private destroy$!: Subject<boolean>;
 
   constructor(
