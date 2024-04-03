@@ -5,6 +5,8 @@ import { FaceSnap } from '../models/face-snap.model';
   providedIn: 'root'
 })
 export class FaceSnapsService {
+  constructor() { }
+
   faceSnaps: FaceSnap[] = [
     {
       id:1,
@@ -52,5 +54,14 @@ export class FaceSnapsService {
     snapType === 'snap' ? faceSnap.snaps++ : faceSnap.snaps--;
   }
 
-  constructor() { }
+  addFaceSnap(formValue: {title: string, description: string, imageUrl: string, location?: string}): void{
+    const faceSnap: FaceSnap = {
+      ...formValue,
+      createdDate: new Date(),
+      snaps: 0,
+      id: this.faceSnaps[this.faceSnaps.length - 1].id + 1,
+    };
+    this.faceSnaps.push(faceSnap);
+  }
+
 }
