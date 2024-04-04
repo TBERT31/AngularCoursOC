@@ -40,9 +40,9 @@ export class FaceSnapsService {
     }
   ];
 
-  getAllFaceSnaps(): Observable<FaceSnap[]>{
-    return this.http.get<FaceSnap[]>("http://localhost:3000/facesnaps");
-  }
+  getAllFaceSnaps(): Observable<FaceSnap[]> {
+    return this.http.get<FaceSnap[]>('http://localhost:3000/facesnaps');
+}
 
   getFaceSnapById(faceSnapId:number): FaceSnap {
     const faceSnap = this.faceSnaps.find(faceSnap => faceSnap.id === faceSnapId);
