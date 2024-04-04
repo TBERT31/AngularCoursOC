@@ -3,6 +3,7 @@ import { FaceSnap } from '../models/face-snap.model';
 import { FaceSnapsService } from '../services/face-snaps.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-single-face-snap',
@@ -26,11 +27,20 @@ export class SingleFaceSnapComponent implements OnInit{
 
     onSnap(faceSnapId: number){
       if(this.buttonText === "Oh Snap!"){
-        this.faceSnapService.snapFaceSnapById(faceSnapId, 'snap');
-        this.buttonText = "Oops, unSnap!";
+        this.faceSnapService.snapFaceSnapById(faceSnapId, 'snap').pipe(
+          tap(() => {
+              this.faceSnap$ = this.faceSnapService.getFaceSnapById(faceSnapId);
+              this.buttonText = "Oops, unSnap!";
+          })
+        ).subscribe();
       }else{
-        this.faceSnapService.snapFaceSnapById(faceSnapId, 'unsnap');
-        this.buttonText = "Oh Snap!";
+        this.faceSnapService.snapFaceSnapById(faceSnapId, 'unsnap').pipe(
+          tap(() => {  
+            this.faceSnap$ = this.faceSnapService.getFaceSnapById(faceSnapId);
+            this.buttonText = "Oh Snap!";
+          })
+        ).subscribe();
+
       }
     }
 }
