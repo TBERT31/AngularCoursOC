@@ -5,9 +5,9 @@ import { FaceSnapListComponent } from './components/face-snap-list/face-snap-lis
 import { NewFaceSnapComponent } from './components/new-face-snap/new-face-snap.component';
 
 const routes: Routes = [
-  { path: ':id', component: SingleFaceSnapComponent },
-  { path: '', component: FaceSnapListComponent },
-  { path: 'create', component: NewFaceSnapComponent },
+    { path: 'create', component: NewFaceSnapComponent },
+    { path: ':id', component: SingleFaceSnapComponent },
+    { path: '', component: FaceSnapListComponent },
 ];
 
 @NgModule({
